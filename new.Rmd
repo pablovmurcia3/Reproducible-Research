@@ -1,0 +1,11 @@
+---
+title: "firstMawkdown"
+author: "Pablo Velásquez"
+date: "24/1/2021"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+My first R markdown file 
+
