@@ -3,7 +3,12 @@ firstMawkdown
 Pablo Velásquez
 24/1/2021
 
-My first R markdown file
+# **Important**
+
+Change output to github\_document makes the original .rmd knit to .md so
+the code can be rendered when pushed to Git
+
+# **My first R markdown file**
 
 Markdown is a text-to-HTML conversion tool for web writers. Markdown
 allows you to write using an easy-to-read, easy-to-write plain text
