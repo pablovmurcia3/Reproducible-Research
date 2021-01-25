@@ -37,3 +37,5 @@ pairs(airquality)
 ```
 
 ![](week2Markdown_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
+
+nice
