@@ -7,6 +7,10 @@ output:
     keep_md: yes
 ---
 
+mEJOR FORMA DE GUARDAR MD CON IMAGENES
+https://github.com/lgreski/datasciencectacontent/blob/master/markdown/repData-configuringKnitrWithMarkdownOutput.md
+
+
 **Literate Statistical Programming with Knitr**    
 ==================================================
 
@@ -54,9 +58,87 @@ R markdown is the integration of R code with Markdown. Documents written in R Ma
 The use of R Markdown to create reproducible reports is now a core tool in literate statistical programming
 
 
+echo False Notice that now the code is no longer in the document.
 
-```r
-plot(airquality$Ozone,airquality$Wind)
+
+```
+## [1] 0.04986247
 ```
 
-![](week2Knitr_files/figure-html/unnamed-chunk-1-1.png)<!-- -->
+you can also hide the results
+
+
+
+## inline Text computation 
+
+
+
+The current time is  lun. ene. 25 10:34:11 a. m. 2021. My favorite number is -0.0643484.
+
+#PLots
+
+
+```r
+x <-  rnorm(100); y <- x + rnorm(100,sd =0.5)
+```
+
+with the option *fig.height*
+
+
+```r
+par(mar = c(5,4,1,1), las = 1)
+plot(x,y)
+```
+
+![](week2Knitr_files/figure-html/scatterplot-1.png)<!-- -->
+
+remember = fig.height, fig.width
+
+#TAble 
+
+
+```r
+library(datasets)
+data(airquality)
+fit <- lm(Ozone ~ Wind + Temp + Solar.R, data = airquality)
+```
+
+Table of regression coefficients
+
+
+```r
+library(xtable)
+```
+
+```
+## Warning: package 'xtable' was built under R version 4.0.3
+```
+
+```r
+xt <- xtable(summary(fit))
+print(xt, type = "html")
+```
+
+<!-- html table generated in R 4.0.2 by xtable 1.8-4 package -->
+<!-- Mon Jan 25 10:34:11 2021 -->
+<table border=1>
+<tr> <th>  </th> <th> Estimate </th> <th> Std. Error </th> <th> t value </th> <th> Pr(&gt;|t|) </th>  </tr>
+  <tr> <td align="right"> (Intercept) </td> <td align="right"> -64.3421 </td> <td align="right"> 23.0547 </td> <td align="right"> -2.79 </td> <td align="right"> 0.0062 </td> </tr>
+  <tr> <td align="right"> Wind </td> <td align="right"> -3.3336 </td> <td align="right"> 0.6544 </td> <td align="right"> -5.09 </td> <td align="right"> 0.0000 </td> </tr>
+  <tr> <td align="right"> Temp </td> <td align="right"> 1.6521 </td> <td align="right"> 0.2535 </td> <td align="right"> 6.52 </td> <td align="right"> 0.0000 </td> </tr>
+  <tr> <td align="right"> Solar.R </td> <td align="right"> 0.0598 </td> <td align="right"> 0.0232 </td> <td align="right"> 2.58 </td> <td align="right"> 0.0112 </td> </tr>
+   </table>
+
+
+# Set global options 
+
+Sometimes you want to set an option that applies to all chunks in your document. 
+
+
+
+
+# in comlex code chunk
+
+cache = TRUE
+
+Chunk caching is one way to avoid these lengthy computations. By setting the cache = TRUE chunk option, what Using knitr for Reproducible Reports 77 knitr does is run the chunk once, then store the output in a database in your working directory. Then, when you re-knit the document, instead of running the code in that particular chunk, knitr simply re-loads the stored output from the database. 
