@@ -52,3 +52,11 @@ R markdown is the integration of R code with Markdown. Documents written in R Ma
 *R markdown can be converted to standard markdown using the knitr package in R. Results from R code are inserted into Markdown document. Markdown can subsequently be converted to HTML using the markdown5 package in R, but you seldom have to call this package explicitly*
 
 The use of R Markdown to create reproducible reports is now a core tool in literate statistical programming
+
+
+
+```r
+plot(airquality$Ozone,airquality$Wind)
+```
+
+![](week2Knitr_files/figure-html/unnamed-chunk-1-1.png)<!-- -->
