@@ -68,3 +68,9 @@ summary(fit)
     ##   (42 observations deleted due to missingness)
     ## Multiple R-squared:  0.6059, Adjusted R-squared:  0.5948 
     ## F-statistic: 54.83 on 3 and 107 DF,  p-value: < 2.2e-16
+
+``` r
+plot(airquality$Ozone,airquality$Wind)
+```
+
+![](week2Markdown_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
